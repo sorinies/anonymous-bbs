@@ -3,7 +3,9 @@
       <div class="card">
         <ul class="list-group list-group-flush">
         <% articles.forEach(item => { %>
-          <li class="list-group-item"><a href="./articles/<%= item.id %>"><%= item.title %></a> <small><%= item.date %></small></li>
+          <form action="/admin/<%= item.id %>" method="POST">
+            <li class="list-group-item"><%= item.title %> <small><%= item.date %></small> <button type="submit" class="btn btn-danger">삭제</button></li>
+          </form>
         <% }) %>
         </ul>
       </div>
